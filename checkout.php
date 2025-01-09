@@ -31,8 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($name) || empty($address) || empty($phone) || empty($email)) {
         echo "<p>Vui lòng điền đầy đủ thông tin.</p>";
     } else {
-        // var_dump($total);
-        // die;
         // Lưu thông tin đơn hàng vào cơ sở dữ liệu
         $query = "INSERT INTO orders (`name`, `address`, `phone`, `email`, `total`) VALUES ('$name', '$address', '$phone', '$email', '$total')";
         if ($conn->query($query)) {
