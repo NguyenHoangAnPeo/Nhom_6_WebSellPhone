@@ -67,7 +67,7 @@ $cart = $_SESSION['cart'] ?? [];
                 <td><?php echo number_format($total, 0, ',', '.'); ?> VNĐ</td>
             </tr>
         </table>
-        <a href="checkout.php">Thanh toán</a>
+        <a href="checkout.php" style="display: inline-block; margin-left: 45%; margin-top: 5px; background-color: rgb(127, 58, 58); padding: 10px 15px; border-radius: 5px; color: white; text-align: center; border: 1px solid red; border: 5px;">Thanh toán</a>
     <?php endif; ?>
 </body>
 </html>

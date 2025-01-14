@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // Xóa giỏ hàng sau khi thanh toán
             unset($_SESSION['cart']);
-            echo "<p>Đơn hàng của bạn đã được thanh toán thành công. Cảm ơn bạn!</p>";
+            echo "<p style=\"text-align: center; margin: 20px 0;font-size:1.3em; color: #333;\">Đơn hàng của bạn đã được thanh toán thành công. Cảm ơn bạn!</p>";
         } else {
             echo "<p>Đã xảy ra lỗi khi thanh toán. Vui lòng thử lại.</p>";
         }
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="css/style.css">
     <title>Thanh toán</title>
 </head>
-<body>
+<body style="width :1256px; margin: auto;">
     <h1>Thanh toán</h1>
 
     <h2>Thông tin đơn hàng</h2>
@@ -96,20 +96,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </table>
 
     <h2>Nhập thông tin thanh toán</h2>
-    <form action="checkout.php" method="POST">
-        <label for="name">Họ và tên:</label>
-        <input type="text" name="name" id="name" required><br>
+    <form action="checkout.php"style="padding: auto;position: relative; margin: auto; background-color: #34495e; width: 35%;height: 200px; border-radius: 10px;padding-top:4%;" method="POST">
+        <label for="name" style="font-size: 1.2em;color: white; font-weight: bold; margin-left: 60px;">Họ và tên:</label>
+        <input type="text" style="height: 15px;position: absolute; right: 40px; width: 200px; " name="name" id="name" required><br>
 
-        <label for="address">Địa chỉ:</label>
-        <input type="text" name="address" id="address" required><br>
+        <label for="address" style="font-size: 1.2em;color: white; font-weight: bold; margin-left: 60px;">Địa chỉ:</label>
+        <input type="text" style="height: 15px;position: absolute; right: 40px; width: 200px; " name="address" id="address" required><br>
 
-        <label for="phone">Số điện thoại:</label>
-        <input type="text" name="phone" id="phone" required><br>
+        <label for="phone" style="font-size: 1.2em;color: white; font-weight: bold; margin-left: 60px;">Số điện thoại:</label>
+        <input type="text" style="height: 15px;position: absolute; right: 40px; width: 200px; " name="phone" id="phone" required><br>
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required><br>
+        <label for="email" style="font-size: 1.2em;color: white; font-weight: bold; margin-left: 60px;">Email:</label>
+        <input type="email" style="height: 15px;position: absolute; right: 40px; width: 200px;  " name="email" id="email" required><br>
 
-        <button type="submit">Thanh toán</button>
+        <button type="submit" style="display: inline-block; position: absolute; right: 40px;cursor: pointer;  margin-top: 20px; background-color: rgb(127, 58, 58); padding: 10px 15px; border-radius: 5px; color: white; text-align: center; border: 1px solid red; border: 5px;">Thanh toán</button>
     </form>
 </body>
 </html>

@@ -58,15 +58,12 @@ CREATE TABLE IF NOT EXISTS `orderdetail` (
   CONSTRAINT `orderdetail_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table websellphone.orderdetail: ~0 rows (approximately)
+-- Dumping data for table websellphone.orderdetail: ~3 rows (approximately)
 DELETE FROM `orderdetail`;
 INSERT INTO `orderdetail` (`order_id`, `product_id`, `quantity`, `price`) VALUES
-	(0, 1, 3, 89970000),
-	(0, 1, 1, 29990000),
-	(0, 3, 2, 63980000),
-	(0, 4, 1, 10990000),
 	(0, 2, 1, 27990000),
-	(0, 4, 1, 10990000);
+	(0, 2, 1, 27990000),
+	(0, 2, 1, 27990000);
 
 -- Dumping structure for table websellphone.orders
 CREATE TABLE IF NOT EXISTS `orders` (
@@ -77,13 +74,12 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `phone` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table websellphone.orders: ~0 rows (approximately)
+-- Dumping data for table websellphone.orders: ~3 rows (approximately)
 DELETE FROM `orders`;
 INSERT INTO `orders` (`name`, `total`, `email`, `address`, `phone`) VALUES
-	('nha', 89970000, 'hoangan23082004@gmail.com', 'Thanh Hoá', 867648352),
-	('an', 29990000, 'wss@gmail.com', 'Thanh Hoá', 867648352),
-	('nha', 74970000, 'hoangan23082004@gmail.com', 'Thanh Hoá', 867648352),
-	('an', 38980000, 'a@gmail.com', 'Thanh Hoá', 867648352);
+	('nha', 27990000, 'hoangan23082004@gmail.com', 'Thanh Hoá', 867648352),
+	('nha', 27990000, 'hoangan23082004@gmail.com', 'Thanh Hoá', 867648352),
+	('nha', 27990000, 'hoangan23082004@gmail.com', 'Thanh Hoá', 867648352);
 
 -- Dumping structure for table websellphone.products
 CREATE TABLE IF NOT EXISTS `products` (
@@ -97,35 +93,35 @@ CREATE TABLE IF NOT EXISTS `products` (
   PRIMARY KEY (`id`),
   KEY `FK_product_category` (`category_id`),
   CONSTRAINT `FK_product_category` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table websellphone.products: ~5 rows (approximately)
 DELETE FROM `products`;
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `stock`, `category_id`, `image`) VALUES
-	(1, 'iPhone 14 Pro Max', 'Điện thoại cao cấp của Apple với màn hình 6.7 inch và chip A16 Bionic.', 29990000, NULL, 1, 'iphone14promax.jpg'),
-	(2, 'Samsung Galaxy S23 Ultra', 'Flagship của Samsung với camera 200MP và màn hình Dynamic AMOLED.', 27990000, NULL, 1, 'galaxys23ultra.jpg'),
-	(3, 'iPad Pro 12.9', 'Máy tính bảng cao cấp với màn hình Liquid Retina và chip M2.', 31990000, NULL, 2, 'ipadpro12.9.jpg'),
-	(4, 'Apple Watch Series 9', 'Đồng hồ thông minh với màn hình Always-On Retina và nhiều tính năng sức khỏe.', 10990000, NULL, 3, 'applewatchseries9.jpg'),
-	(5, 'AirPods Pro 2', 'Tai nghe không dây chống ồn chủ động với chip H2.', 5490000, NULL, 3, 'airpodspro2.jpg');
+	(1, 'iPhone 14 Pro Max', 'Điện thoại cao cấp của Apple với màn hình 6.7 inch và chip A16 Bionic.', 29990000, NULL, 1, 'iphone14promax1.jpg.avif'),
+	(2, 'Samsung Galaxy S23 Ultra', 'Flagship của Samsung với camera 200MP và màn hình Dynamic AMOLED.', 27990000, NULL, 1, 'galaxys23ultra1.jpg.png'),
+	(3, 'iPad Pro 12.9', 'Máy tính bảng cao cấp với màn hình Liquid Retina và chip M2.', 31990000, NULL, 2, 'ipadpro12.91.jpg.webp'),
+	(4, 'AirPods Pro 2', 'Tai nghe không dây chống ồn chủ động với chip H2.', 5490000, NULL, 3, 'airpodspro21.jpg.jpg'),
+	(5, 'Apple Watch Series 9', 'Đồng hồ thông minh với màn hình Always-On Retina và nhiều tính năng sức khỏe.', 10990000, NULL, 3, 'applewatchseries91.jpg.webp');
 
 -- Dumping structure for table websellphone.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(256) NOT NULL DEFAULT '0',
-  `username` char(50) DEFAULT NULL,
-  `password` varchar(256) DEFAULT NULL,
-  `phone` varchar(32) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `role` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `role` enum('user','admin') DEFAULT 'user',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table websellphone.users: ~3 rows (approximately)
+-- Dumping data for table websellphone.users: ~2 rows (approximately)
 DELETE FROM `users`;
-INSERT INTO `users` (`id`, `name`, `username`, `password`, `phone`, `email`, `role`) VALUES
-	(1, '0', 'user1', 'password1', NULL, 'user1@example.com', NULL),
-	(2, '0', 'user2', 'password2', NULL, 'user2@example.com', NULL),
-	(3, '0', 'user3', 'password3', NULL, 'user3@example.com', NULL);
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `created_at`, `role`) VALUES
+	(1, 'usser', '$2y$10$ccFp2NuDbbecL70YG.LSUeD8A7ZGqDgEs2UqW8rcSuEegeyv900jK', NULL, '2025-01-09 12:36:16', 'user'),
+	(2, 'an', '$2y$10$/59VDVozdRGoUZMlk7YSBONEV5Ot64dT5nYQGfdMjZ54VH6QTLbDa', NULL, '2025-01-09 12:42:21', 'user'),
+	(3, 'hoangan', '$2y$10$2cGARTHSNI.kJHE.PUTlp.1iZBEoEItOPSqB5ZlmvOoOuNQBdIiRe', NULL, '2025-01-12 10:21:31', 'user');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -41,20 +41,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <h1>Đăng ký tài khoản</h1>
-    <form action="register.php" method="post">
+    <form action="register.php" method="post" style="padding: auto;margin: auto; background-color: #34495e; width: 35%;height: 200px; border-radius: 10px;padding-top:4%;">
         <div>
-            <label for="username">Tên đăng nhập:</label>
-            <input type="text" id="username" name="username" required>
+            <label for="username" style="font-size: 1.2em; font-weight: bold; margin-left: 60px;">Tên đăng nhập:</label>
+            <input type="text" style="height: 30px; width: 200px; margin-left: 30px; margin-bottom: 25px;" id="username" name="username" required>
         </div>
         <div>
-            <label for="password">Mật khẩu:</label>
-            <input type="password" id="password" name="password" required>
+            <label for="password" style="font-size: 1.2em; font-weight: bold; margin-left: 60px;">Mật khẩu:</label>
+            <input type="password" style="height: 30px; width: 200px; margin-left: 80px; margin-bottom: 25px;" id="password" name="password" required>
         </div>
         <?php if (!empty($error)): ?>
             <p style="color: red;"><?php echo $error; ?></p>
         <?php endif; ?>
-        <button type="submit">Đăng ký</button>
+        <button type="submit" style="background-color:rgb(85, 137, 87);color: white;margin-left: 36%;margin-top: 20px; border: none; padding: 10px 20px; text-align: center; display: inline-block; font-size: 16px; border-radius: 5px;cursor: pointer; transition: background-color 0.3s ease;">Đăng ký</button>
     </form>
-    <p>Đã có tài khoản? <a href="login.php">Đăng nhập tại đây</a>.</p>
+    <p style="margin-left: 40%;">Đã có tài khoản? <a href="login.php">Đăng nhập tại đây</a>.</p>
+    <!-- Footer -->
+<footer style="background-color: #333; color: white; text-align: center; padding: 10px 0;position: fixed; bottom: 0; width: 100%;">
+    <p>&copy; 2025 Web Bán Điện Thoại. Tất cả các quyền được bảo lưu.</p>
+    <p>Liên hệ: <a href="mailto:support@webbanhang.com" style="color: #f4a261;">support@webbanhang.com</a></p>
+</footer>
 </body>
 </html>
