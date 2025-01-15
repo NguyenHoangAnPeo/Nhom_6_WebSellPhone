@@ -18,22 +18,25 @@ $products = $result->num_rows > 0 ? $result->fetch_all(MYSQLI_ASSOC) : [];
     <link rel="stylesheet" href="css/style.css">
     <title>Web Bán Điện Thoại</title>
 </head>
-<body>
+<body style="position: relative;">
    <!-- Navbar -->
-   <div class="navbar" style="padding-left: 80%">
+   <div class="navbar" style="padding-left: 70%;width: 100%;height: 80px;background-color: #b3b0b0; position: fixed; top: 0px;">
         <?php if ($isLoggedIn): ?>
-            <p style="font-size:1.7em;font-weight: bold;margin-left: 20px; margin-top: 20px;">Chào, <?php echo $_SESSION['user']['username']; ?>!</p>
-            <a href="logout.php" style="display: inline-block; margin-left: 20px; margin-top: 5px; background-color: rgb(127, 58, 58); padding: 10px 15px; border-radius: 5px; color: white; text-align: center; border: 1px solid red; border: 5px;">Đăng xuất</a>
-            <a href="cart.php" style="display: inline-block; margin-left: 20px; margin-top: 5pxpx; border-radius: 50%; background-color: rgb(127, 58, 58); padding: 15px 15px; color: white; text-align: center; border: 1px solid red; border: 5px;">Giỏ hàng</a>
+            <p style="font-weight: bold;display: inline-block ;margin-left: 20px;">Chào, <?php echo $_SESSION['user']['username']; ?>!</p>
+            <a href="logout.php" style="display: inline-block; margin-top: 17px; background-color: rgb(127, 58, 58); padding: 10px 15px; border-radius: 5px; color: white; text-align: center; border: 1px solid red; border: 5px;">Đăng xuất</a>
+            <a href="cart.php" style="display: inline-block ;padding; margin-top: 17px; border-radius: 50%; background-color: rgb(127, 58, 58); padding: 15px 15px; color: white; text-align: center; border: 1px solid red; border: 5px;">Giỏ hàng</a>
         <?php else: ?>
             <a href="login.php" style="display: inline-block; margin-left: 20px; margin-top: 20px; background-color: rgb(127, 58, 58); padding: 10px 15px; border-radius: 5px; color: white; text-align: center; border: 1px solid red; border: 5px;">Đăng nhập</a><a href="register.php" style="display: inline-block; margin-left: 20px; margin-top: 20px; border-radius: 5px; background-color: rgb(127, 58, 58); padding: 10px 15px; color: white; text-align: center; border: 1px solid red; border: 5px;">Đăng ký</a>
     
         <?php endif; ?>
     </div>
     <!-- Banner -->
-<div style="background-color: #f4a261;background-image: url(https://image.slidesdocs.com/responsive-images/background/technology-green-business-abstract-pattern-abstract-gradient-powerpoint-background_6aa5ffcdd9__459_258.jpg);background-repeat: no-repeat;background-size: cover; color: white; text-align: center; padding: 20px 0; margin-bottom: 20px; margin-top: 20px;">
-    <h1 style="color: black;">Chào mừng bạn đến với Web Bán Điện Thoại</h1>
-    <p style="color: black;">Khám phá những sản phẩm công nghệ mới nhất với ưu đãi hấp dẫn!</p>
+<div style="background-image: url(https://images.samsung.com/is/image/samsung/assets/eg/smartphones/galaxy-s23-ultra/images/galaxy-s23-ultra-highlights-kv.jpg?$ORIGIN_JPG$);background-repeat: no-repeat;background-size: cover; color: white; padding: 20px 0; margin-bottom: 20px;height: 800px; margin-top: 80px;">
+<div class="banner-text">
+            <h1 style="font-size: 3em; margin: 0;">Galaxy S23 Ultra</h1>
+            <p style="font-size: 1.2em; margin: 10px 0;">Đỉnh cao công nghệ - Camera 200MP, Hiệu năng vượt trội</p>
+            <a href="product.php?id=2" style="display: inline-block; padding: 10px 20px; background-color: #e50914; /* Màu đỏ nổi bật */ color: white; text-decoration: none; border-radius: 5px;font-weight: bold;">Khám phá ngay</a>
+        </div>
 </div>
 
     <!-- Danh sách sản phẩm -->

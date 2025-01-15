@@ -43,11 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1>Đăng ký tài khoản</h1>
     <form action="register.php" method="post" style="padding: auto;margin: auto; background-color: #34495e; width: 35%;height: 200px; border-radius: 10px;padding-top:4%;">
         <div>
-            <label for="username" style="font-size: 1.2em; font-weight: bold; margin-left: 60px;">Tên đăng nhập:</label>
+            <label for="username" style="font-size: 1.2em; font-weight: bold;color: white; margin-left: 60px;">Tên đăng nhập:</label>
             <input type="text" style="height: 30px; width: 200px; margin-left: 30px; margin-bottom: 25px;" id="username" name="username" required>
         </div>
         <div>
-            <label for="password" style="font-size: 1.2em; font-weight: bold; margin-left: 60px;">Mật khẩu:</label>
+            <label for="password" style="font-size: 1.2em; font-weight: bold;color: white; margin-left: 60px;">Mật khẩu:</label>
             <input type="password" style="height: 30px; width: 200px; margin-left: 80px; margin-bottom: 25px;" id="password" name="password" required>
         </div>
         <?php if (!empty($error)): ?>

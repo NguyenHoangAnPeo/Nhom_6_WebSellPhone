@@ -6,19 +6,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = "SELECT * FROM users WHERE username = ?";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param('s', $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
-
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user'] = $user;
-        header('Location: index.php');
-        exit;
+    // Kiểm tra xem username và password có được gửi lên không
+    if (empty($username) || empty($password)) {
+        $error = "Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.";
     } else {
-        $error = "Tên đăng nhập hoặc mật khẩu không đúng.";
+        // Truy vấn lấy thông tin người dùng
+        $query = "SELECT * FROM users WHERE username = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+
+        // Kiểm tra mật khẩu và vai trò
+        if ($user && password_verify($password, $user['password'])) {
+            // Lưu thông tin cần thiết vào session
+            $_SESSION['user'] = [
+                'id' => $user['id'],
+                'username' => $user['username'],
+                'role' => $user['role']
+            ];
+
+            // Chuyển hướng dựa trên vai trò
+            if ($user['role'] === 'admin') {
+                header('Location: admin.php');
+            } else {
+                header('Location: index.php');
+            }
+            exit;
+        } else {
+            $error = "Tên đăng nhập hoặc mật khẩu không đúng.";
+        }
     }
 }
 ?>
