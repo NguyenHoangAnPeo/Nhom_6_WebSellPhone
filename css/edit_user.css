@@ -1,0 +1,103 @@
+/* Reset mặc định */
+body, h1, form, label, input, select, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #003d80;
+}
+
+input[type="password"] {
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+form a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+.back-button {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #6c757d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+.back-button:active {
+    background-color: #4e555b;
+}

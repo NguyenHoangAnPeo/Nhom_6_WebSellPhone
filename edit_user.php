@@ -50,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="stylesheet" href="css/edit_user.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,6 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="password">Mật khẩu mới (để trống nếu không đổi):</label>
         <input type="password" name="password" id="password"><br>
         <button type="submit">Lưu thay đổi</button>
+        <a href="admin.php" class="back-button">Về trang quản trị</a>
+
     </form>
 </body>
 </html>

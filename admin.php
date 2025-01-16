@@ -22,6 +22,9 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
 </head>
 <body>
     <h1>Quản lý người dùng</h1>
+    <div class="logout-container">
+    <a href="logout.php" style="display: inline-block; margin-left: 90%; margin-top: 20px; background-color: rgb(127, 58, 58); padding: 10px 15px; border-radius: 5px; color: white; text-align: center; border: 1px solid red; border: 5px;" class="logout-button">Đăng xuất</a>
+</div>
     <table>
         <tr>
             <th>ID</th>

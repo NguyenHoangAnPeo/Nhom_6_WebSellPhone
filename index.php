@@ -33,9 +33,9 @@ $products = $result->num_rows > 0 ? $result->fetch_all(MYSQLI_ASSOC) : [];
     <!-- Banner -->
 <div style="background-image: url(https://images.samsung.com/is/image/samsung/assets/eg/smartphones/galaxy-s23-ultra/images/galaxy-s23-ultra-highlights-kv.jpg?$ORIGIN_JPG$);background-repeat: no-repeat;background-size: cover; color: white; padding: 20px 0; margin-bottom: 20px;height: 800px; margin-top: 80px;">
 <div class="banner-text">
-            <h1 style="font-size: 3em; margin: 0;">Galaxy S23 Ultra</h1>
-            <p style="font-size: 1.2em; margin: 10px 0;">Đỉnh cao công nghệ - Camera 200MP, Hiệu năng vượt trội</p>
-            <a href="product.php?id=2" style="display: inline-block; padding: 10px 20px; background-color: #e50914; /* Màu đỏ nổi bật */ color: white; text-decoration: none; border-radius: 5px;font-weight: bold;">Khám phá ngay</a>
+            <h1 style="font-size: 3em; margin-top: 230px;margin-right: 60%;color: #aeaeae;">Galaxy S23 Ultra</h1>
+            <p style="font-size: 1.2em; margin-left:115px;">Đỉnh cao công nghệ - Camera 200MP, Hiệu năng vượt trội</p>
+            <a href="product.php?id=2" style="display: inline-block;margin-left: 120px; padding: 10px 20px; background-color: none;border: 2px solid blue; /* Màu đỏ nổi bật */ color: white; text-decoration: none; border-radius: 5px;font-weight: bold;">Khám phá ngay</a>
         </div>
 </div>
 
